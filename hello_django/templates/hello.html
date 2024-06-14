@@ -1,3 +1,10 @@
-<h1>Title :{{title}} </h1>
-<p>Summary : {{year}}</p>
-<h4>Year : {{Summary}}</p>
+{% for movie_obj in movie%}
+<h1>Title :{{movie_obj.title|upper}} </h1>
+<p>Summary : {{movie_obj.year}}</p>
+<h4>Year : {{movie_obj.summary}}</p>
+{% endfor %}
+{% if movie_obj.success %}
+<p>Movie was a Succes </p>
+{% else %}
+<p>Movie was a failure</p>
+{% endif %}
